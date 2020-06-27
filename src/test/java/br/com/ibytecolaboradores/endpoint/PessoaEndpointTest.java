@@ -1,14 +1,18 @@
 package br.com.ibytecolaboradores.endpoint;
 
+import br.com.ibytecolaboradores.utils.ObjectUtil;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PessoaEndpointTest {
 
     PessoaEndpoint pessoaEndpoint;
+    @Autowired
+    private ObjectUtil objectUtil;
 
     @BeforeEach
     public void setUp(){
@@ -19,7 +23,7 @@ class PessoaEndpointTest {
     @AfterEach
     public void tearDown(){
         /*executa no final da execução do teste*/
-        clearObject(pessoaEndpoint);
+        objectUtil.clearObject(pessoaEndpoint);
     }
 
     @org.junit.jupiter.api.Test
@@ -29,7 +33,4 @@ class PessoaEndpointTest {
         Assertions.assertEquals(nomeEsperado,pessoaEndpoint.listarPessoas().get(0).getNome());
     }
 
-    public void clearObject(Object objeto){
-        objeto = null;
-    }
 }
