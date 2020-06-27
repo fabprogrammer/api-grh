@@ -5,7 +5,7 @@ import java.util.Date;
 public class Pessoa {
     private Long id;
     private String nome;
-    private Date dataNascimento;
+    private String dataNascimento;
     private String rg;
     private String cpf;
     private String ctps;
@@ -17,7 +17,7 @@ public class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(Long id, String nome, Date dataNascimento, String rg, String cpf, String ctps, Boolean pcd, Boolean ativo, Double salario, Setor setor) {
+    public Pessoa(Long id, String nome, String dataNascimento, String rg, String cpf, String ctps, Boolean pcd, Boolean ativo, Double salario, Setor setor) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -46,11 +46,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -108,5 +108,21 @@ public class Pessoa {
 
     public void setSalario(Double salario) {
         this.salario = salario;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", dataNascimento=" + dataNascimento +
+                ", rg='" + rg + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", ctps='" + ctps + '\'' +
+                ", pcd=" + pcd +
+                ", ativo=" + ativo +
+                ", salario=" + salario +
+                ", setor=" + setor +
+                '}';
     }
 }
