@@ -1,24 +1,11 @@
 package br.com.ibytecolaboradores.model;
 
-public class Setor {
-    private Long id;
+import javax.persistence.Entity;
+
+@Entity
+public class Setor extends AbstractEntity {
+
     private String nome;
-
-    public Setor() {
-    }
-
-    public Setor(Long id, String nome) {
-        this.id = id;
-        this.nome = nome;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;
@@ -26,13 +13,5 @@ public class Setor {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    @Override
-    public String toString() {
-        return "Setor{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                '}';
     }
 }

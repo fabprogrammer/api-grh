@@ -1,10 +1,10 @@
 package br.com.ibytecolaboradores.model;
 
-import java.util.Date;
-import java.util.Objects;
+import javax.persistence.Entity;
 
-public class Pessoa {
-    private Long id;
+@Entity
+public class Pessoa extends AbstractEntity {
+
     private String nome;
     private String dataNascimento;
     private String rg;
@@ -14,30 +14,6 @@ public class Pessoa {
     private Boolean ativo;
     private Double salario;
     private Setor setor;
-
-    public Pessoa() {
-    }
-
-    public Pessoa(Long id, String nome, String dataNascimento, String rg, String cpf, String ctps, Boolean pcd, Boolean ativo, Double salario, Setor setor) {
-        this.id = id;
-        this.nome = nome;
-        this.dataNascimento = dataNascimento;
-        this.rg = rg;
-        this.cpf = cpf;
-        this.ctps = ctps;
-        this.pcd = pcd;
-        this.ativo = ativo;
-        this.salario = salario;
-        this.setor = setor;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;
@@ -95,14 +71,6 @@ public class Pessoa {
         this.ativo = ativo;
     }
 
-    public Setor getSetor() {
-        return setor;
-    }
-
-    public void setSetor(Setor setor) {
-        this.setor = setor;
-    }
-
     public Double getSalario() {
         return salario;
     }
@@ -111,32 +79,11 @@ public class Pessoa {
         this.salario = salario;
     }
 
-    @Override
-    public String toString() {
-        return "Pessoa{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", dataNascimento=" + dataNascimento +
-                ", rg='" + rg + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", ctps='" + ctps + '\'' +
-                ", pcd=" + pcd +
-                ", ativo=" + ativo +
-                ", salario=" + salario +
-                ", setor=" + setor +
-                '}';
+    public Setor getSetor() {
+        return setor;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pessoa pessoa = (Pessoa) o;
-        return setor.equals(pessoa.setor);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(setor);
+    public void setSetor(Setor setor) {
+        this.setor = setor;
     }
 }
