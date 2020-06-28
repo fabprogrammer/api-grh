@@ -1,8 +1,6 @@
 package br.com.ibytecolaboradores.endpoint;
 
-import br.com.ibytecolaboradores.error.CustomErrorType;
 import br.com.ibytecolaboradores.model.Pessoa;
-import br.com.ibytecolaboradores.model.Setor;
 import br.com.ibytecolaboradores.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

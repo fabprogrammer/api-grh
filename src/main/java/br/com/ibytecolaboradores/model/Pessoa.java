@@ -1,6 +1,7 @@
 package br.com.ibytecolaboradores.model;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Pessoa extends AbstractEntity {
@@ -13,6 +14,7 @@ public class Pessoa extends AbstractEntity {
     private Boolean pcd;
     private Boolean ativo;
     private Double salario;
+    @ManyToOne
     private Setor setor;
 
     public String getNome() {
