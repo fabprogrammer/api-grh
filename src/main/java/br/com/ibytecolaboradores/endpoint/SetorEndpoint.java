@@ -25,7 +25,7 @@ public class SetorEndpoint {
 
     @PostMapping
     public ResponseEntity<?> cadastrarSetor(@RequestBody Setor setor) {
-        return new ResponseEntity<>(setorDao.save(setor), HttpStatus.OK);
+        return new ResponseEntity<>(setorDao.save(setor), HttpStatus.CREATED);
     }
 
     @DeleteMapping(path = "/{id}")

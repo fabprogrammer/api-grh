@@ -1,6 +1,7 @@
 package br.com.ibytecolaboradores.endpoint;
 
 import br.com.ibytecolaboradores.model.Pessoa;
+import br.com.ibytecolaboradores.model.Setor;
 import br.com.ibytecolaboradores.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,14 +25,14 @@ public class PessoaEndpoint {
         return new ResponseEntity<>(pessoaDao.findAll(), HttpStatus.OK);
     }
 
-    /*@GetMapping(path = "/{setor}")
+    @GetMapping(path = "/findBySetor/{setor}")
     public ResponseEntity<?> listarPessoaPorSetor(@PathVariable("setor") Setor setor) {
-        return new ResponseEntity<>(new CustomErrorType("Pessoa não encontrada"), HttpStatus.OK);
-    }*/
+        return new ResponseEntity<>(pessoaDao.findBySetor(setor), HttpStatus.OK);
+    }
 
     @PostMapping
     public ResponseEntity<?> cadastrarPessoa(@RequestBody Pessoa pessoa) {
-        return new ResponseEntity<>(pessoaDao.save(pessoa), HttpStatus.OK);
+        return new ResponseEntity<>(pessoaDao.save(pessoa), HttpStatus.CREATED);
     }
 
     @DeleteMapping(path = "/{id}")
